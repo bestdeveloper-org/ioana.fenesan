@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array</title>
+	<script type="text/javascript" src="Array.js"></script>
+</head>
+<body>
+<button onclick="numbers.forEach(myFunction)">Try it</button>
+<p id="demo"></p>
+
+<script>
+demoP = document.getElementById("demo");
+var numbers = [4, 9, 16, 25];
+
+function myFunction(item, index) {
+    demoP.innerHTML = demoP.innerHTML + "index[" + index + "]: " + item + "<br>"; 
+}
+</script>
+
+
+</body>
+</html>
