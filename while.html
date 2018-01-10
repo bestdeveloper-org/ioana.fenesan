@@ -1,0 +1,472 @@
+<script>
+	
+// while
+
+var i=0;
+while(i<=10)
+{
+	i+=2;  //++i;
+	document.write(i + "<br/>");
+	if (i == 5) break;
+
+}
+document.write('gata');
+
+var i=0;
+while(i<5)
+{
+	i++;
+	document.write(i + '<br>');
+
+};
+document.write('gata');
+
+var i = 1;
+while( i <= 12)
+{
+	i+=3;
+	document.write(i + "<br/>")
+};
+
+var bool = true;
+while(bool) {
+	document.write('less is more');
+	bool = false;
+};
+
+var loop = function(){
+	count=0
+	while(count<5){
+		document.write("<br/>I'm looping");
+		count = count+1;
+	}
+};
+loop();
+
+var casa = function(){
+	i=0
+	while(i<10){		
+		i++;
+		document.write("<br/> masa, scaune, vase");
+			}
+			if (i== 5) { 
+				break
+			}
+};
+
+var iarna = true;
+while (iarna == true){
+	document.write("<br/>ia sania");
+	iarna= false;
+};
+
+iarna = true;
+while(iarna){
+	document.write('<br/> looped once!');
+	iarna=false;
+}
+ count=2;
+ while(count<6){
+ 	document.write('<br/>The count is' + count);
+ 	count++;
+ }
+
+for (i=3; i<=6; i++){
+ 	document.write('<br/>The count is' + i);
+ 	if (i==5) break; 
+ } 
+
+ for (i=2; i<12; i++){
+ 	document.write("<br/>Numara in continuare" + i);
+ }
+
+
+ bool = false;
+ do
+ {
+ 	document.write('<br/>print');
+ } while (bool===true);
+
+ color="red";
+ do
+ {
+ document.write('<br/> culoare falsa'); 
+ } while (color == "yelow");
+
+ for(i=0; i<2; i++){
+ 	document.write("<br/>", i);
+ }
+
+bool = true;
+while(bool){
+	document.write(bool);
+	bool = false;
+}
+
+do{
+	document.write(i+bool);
+}
+while(bool===true); 
+
+var i=0;
+while(i<14)
+{
+	i++;
+	document.write(i + "<br/>");
+	if ( i == 10) break;
+};
+document.write('gata');
+
+var i=9;
+while(i>0)
+{
+	i--;
+	document.write("<br/>" + i);
+	if(i==5) break;
+}
+document.write('gata');
+
+i=0;
+while(i<10){
+	i++;
+	document.write( "<br/>" + i);
+}
+
+var colors = [ 'red', 'blue', 'orange'];
+var i = 0;
+while(i<colors.length){
+	document.write(colors[i]);
+	document.write('<br/>')
+
+	i++;
+}
+colors.push('green');
+document.write(colors);
+
+var note=[ 'do', 're', 'mi'];
+i=0;
+while (i<note.length){
+	document.write(note[ i]);
+	document.write('<br/>')
+
+	i++;
+}
+note.push('fa');
+document.write(note);
+
+var city=[ 'Cluj', 'Oradea', 'Brasov'];
+i=0;
+while(i<city.length){
+	document.write(city[i]);
+	document.write('<br/>');
+	i++;
+}
+city.sort(),
+document.write(city);
+
+var nume = [ 'Ioana', 'Vasile', 'Gelu'];
+var numeCity = [ 'Cluj', 'Oradea', 'Craiova'];
+var i=0;
+while(i<nume.length){
+	document.write(nume[i]);
+	document.write('<br/>');
+	i++;
+}
+
+var cars = ['opel', 'daca', 'skoda', 'mercedes'];
+var i= 0;
+while(i<cars.length){
+	document.write(cars[i]);
+	document.write('<br/>');
+	i++;
+}
+
+var cifre = [ 1, 2, 9, 8, 4, 7, ];
+var i=0;
+while(i<cifre.length){
+	document.write(cifre[i]);
+	document.write("<br/>");
+	i++;
+}
+
+cifre.sort();
+document.write(cifre);
+var res=cifre.slice(2, 4);
+document.write("<br/>" + res);
+
+num = 9;
+i=0;
+while(i<9){
+	i++;
+	document.write("<br/>" + i)
+}
+
+
+var colors=[ 'red', 'green', 'blue'];
+var i= 0;
+do {
+	document.write(colors[i], "<br/>")
+	i++;
+} while (i<colors.length);
+
+
+
+var tree=['cires', 'cais', 'portocal'];
+i=0;
+do{ 
+  document.write(tree[i], "<br/>");
+  i++;
+}while (i<tree.length);
+
+var divers= colors.concat(cifre);
+document.write(divers);
+
+var i=0;
+do
+{
+	i++; 
+	document.write(i +'<br/>');
+}while (i<10);
+document.write('gata');
+
+
+var i=10;
+while (i<10);
+{
+	i++;
+  document.write('<br/>'+i )
+};
+document.write('<br/> gata');
+
+
+var city=[ 'cluj', 'cluj', 'cluj'];
+var i=1;
+do
+{
+	i++;
+	document.write('<br/>' + i)
+} while (i<city.length);
+
+
+
+var city=[ 'cluj', 'cluj', 'cluj'];
+i=0;
+while(i<city.length){
+	document.write('<br/>'+ city[i]);
+	i++;
+}
+
+var newString = "";
+var theString = 'publicitate';
+var counter = theString.length;
+do
+{
+newString += theString.substring(counter-1, counter);
+counter--;
+}
+while (counter > 0 );
+document.write('<br/>theString' + " reversed is " + newString + "!");
+
+
+
+var num = [ 1,5,9,8,4,10];
+i=0;
+while(i<num.length){
+	document.write('<br/>', num[i])
+	i++;
+}
+
+
+var num = 9;
+i=0;
+while(i<9){
+	i++;
+	document.write('<br/>' + i)
+};
+
+var num = 8;
+i=1;
+do {
+	i++;
+	document.write('<br/>' + i)
+} while (i<8); 
+
+var num = 12;
+i=2;
+do{ 
+	i++;
+	document.write('<br/>' + i)
+} while (i<=8);
+
+var num=12;
+i=0;
+while(i<=8){
+	i++;
+	document.write('<br/>' + i)
+};
+
+
+
+var a=['He'];
+var b = ['ll'];
+var c = ['o'];
+var world = a+b+c;
+i=0;
+while(i<world.length){
+	document.write('<br/>' + world[i]);
+	i++
+};
+
+
+
+var colors=[ 'red', 'blue', 'yellow'];
+
+function mycolors(culori){
+	i=0;
+	while(i<culori.length){
+		i++;
+	document.write('<br/>' + culori[i])
+}	  
+};
+var rez = mycolors(colors);
+
+var num = -10;
+while(num < 20){
+	document.write('<br/>', num);
+	num++;
+}
+
+var num = 10;
+while(num < 40){
+document.write(num);
+num+=2;
+}
+
+
+var num = 10;
+while(num < 40){
+	if(num % 2 === 0){
+	  document.write('<br/>', num);
+	}
+num+=1;
+}
+
+var num = 300;
+while(num <= 330){
+	if(num % 2 !== 0){
+	  document.write('<br/>', num);
+	}
+num+=1;
+}
+
+var num = 5;
+while(num <= 60){
+	if(num % 3 === 0 && num % 5 ===0){
+	  document.write('<br/>', num);
+	}
+num+=1;
+}
+
+/*var answer = prompt('are you there yet?')
+if(answer ==='yes'){
+	alert('yeees')
+}else {
+	var answer = prompt('are you there yet?');
+}*/
+
+var str = 'hello';
+i= 0 ;
+while(i<str.length){
+	document.write('<br/>', str[i])
+	i++;
+}
+
+for (var i = -10; i <= 19; i++) {
+	document.write('<br/>', i);
+}
+
+for (var i = 10; i <= 40; i += 2) {
+	document.write('<br/>', i);
+}
+
+for (var i = 10; i <= 40; i++) {
+	if(i % 2 === 0){
+		document.write('<br/>', i);
+	}
+}
+
+
+for (var i = 300; i <= 330; i++) {
+	if(i % 2 !== 0){
+		document.write('<br/>', i);
+	}
+}
+
+for (var i = 5; i <= 50; i ++) {
+	if(i % 3 === 0 && i % 5 === 0){
+		document.write('<br/>', i);
+	}
+}
+
+for (i = 1; i <=30; i++){
+	if(i % 2 !== 0){ 
+	document.write('<br/>', i);
+}
+
+}
+
+var angajati = [
+{ nume: 'Ion', salar: 1000},
+{nume: 'Marcela', salar: 1500},
+{nume: 'Ionut', salar: 2350}
+];
+
+var salarii = 0;
+function add(item, counter, array){
+	salarii += Number(item.salar);
+}
+
+angajati.forEach(add);
+console.log('salarii: ' + salarii); //salarii: 4850
+
+var arr = [ 1, 2, 3, 4];
+
+arr.forEach(function(item){
+	console.log(item)
+});
+
+
+var arr1 = [ 30, 60, 80, 4];
+
+var sum = 0;
+function sumAll(item){
+	sum += Number(item)
+};
+arr1.forEach(sumAll);
+console.log(sum); //174
+
+var numbers = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+var colors = ['red', 'orange', 'yellow', 'green'];
+numbers.forEach(function(color){
+	if(color % 3 !== 0 ) {
+		console.log(color);
+	}
+});
+
+[1, 2, 3, 4, 5].forEach(function(item, i, arr){
+	console.log( arr);
+});
+
+[ 'masina', 'vioara', 'casa', 'masa'].forEach(function(item, i, arr){
+	console.log(arr)
+});
+
+
+
+
+
+
+
+
+
+</script>

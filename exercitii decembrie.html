@@ -1,0 +1,300 @@
+<script>
+
+var names = {
+		name: "Irina",
+		age: 30,
+		ardeleanca: true,
+		vorbeste: function()
+		{
+			this.ardeleneste = true;
+		},
+
+		  nationalitate:{
+                     	taraOrigine: 'Romania',
+        				moldoveaneste: false,
+        				oras: 'Cluj',
+	  		},
+	 	 culoareOchi: 'caprui',
+   };
+
+names.vorbeste();
+document.write(names.nationalitate.moldoveaneste);
+
+var toate =  [{ masura: 30},{ inaltime: 'medie'}];
+var toate=[];
+toate.push(names);
+toate.push(names);
+names.vorbeste();
+console.log(toate);
+
+//4,5
+
+function person(nameValue)
+{
+	this.name = nameValue;
+	this.age = null;
+	this.inaltime = "";
+	this.statura = function(inaltime)
+	{
+		this.inaltime = inaltime;
+	}
+}
+
+var human = new person('Irina');
+human.age = 30;
+human.statura(160);
+
+var arr = [{ masura: 30},{ inaltime: 'medie'}];
+arr.push(human);
+console.log(arr);
+
+
+
+var human2 = new person();
+human2.age = 15;
+human2.name = 'SGigi';
+var arr2 = [{ masina: 'dacie'},{ culoare: 'rosie'}];
+arr2.push(human2);
+console.log(arr2);
+
+//6
+
+var persoane = [];
+persoane[0] = {name: 'Ioana', nickname: 'Pop', age: 30}
+persoane[1]	= {name: 'Ionel', nickname: 'Ionescu', age: 52}
+persoane[2]	= {name: 'Paul', nickname: 'Petrescu', age: 36}
+persoane[3]	= {name: 'Nicu', nickname: 'Nicolae', age: 25}
+
+/*
+persoane.sort(function(a, b){
+    return a.age-b.age
+});
+console.log(persoane);
+*/
+
+var source = Object.assign([],persoane);
+
+source.sort(function(a, b){
+    return a.name<b.name
+});
+console.log(source);
+
+//7
+
+var vechime = [];
+vechime[0] = {firstName: 'Ioana', lastaName: 'Pop', age: 30}
+vechime[1]	= {firstName: 'Ionel', lastaName: 'Ionescu', age: 52}
+vechime[2]	= {firstName: 'Paul', lastaName: 'Petrescu', age: 36}
+vechime[3]	= {firstName: 'Nicu', lastaName: 'Nicolae', age: 25}
+vechime[4]	= {firstName: 'Oliviu', lastaName: 'Muresan', age: 16}
+
+var source1 = Object.assign([],vechime);
+
+source1.sort(function(a, b){
+	if(a.age > b.age){
+    return 1;
+}
+if(a.age < b.age){
+    return -1;
+}
+    return 0;
+});
+console.log(source1);
+
+//8
+
+var vechime = [];
+vechime[0] = {firstName: 'Ioana', lastaName: 'Pop', age: 30}
+vechime[1]	= {firstName: 'Ana', lastaName: 'Ionescu', age: 52}
+vechime[2]	= {firstName: 'Paul', lastaName: 'Petrescu', age: 36}
+vechime[3]	= {firstName: 'Nicu', lastaName: 'Nicolae', age: 105}
+vechime[4]	= {firstName: 'Oliviu', lastaName: 'Muresan', age: 16}
+
+var source2 = Object.assign([],vechime);
+
+source2.sort(function(a,b){
+	return b.firstName < a.firstName && a.age > b.age
+});
+console.log(source2);
+
+//9
+
+var filterArray = source2.filter(function(element){
+	return element.age<40;
+});
+console.log(filterArray)
+
+//10
+
+var filterArray2 = source2.filter(function(element){
+	return element.firstName == 'Ana' && element.age<90
+});
+console.log(filterArray2)
+
+//11
+
+
+function getRandom(min, max){
+	min = Math.ceil(min);
+	max = Math.floor(max);
+		return Math.floor( Math.random()* (max - min + 1)) + min;
+
+}
+
+var rez = getRandom(1,100);
+console.log(rez);
+
+//12
+
+
+//13
+
+var iMax = 20;
+var jMax = 10;
+var f = new Array();
+for (i=0; i<iMax; i++){
+	f[i] = new Array();
+	for (j=0; j<jMax; j++){
+		f[i][j] = 2;
+	}
+}
+console.log(f);
+
+//14
+
+
+//15
+
+
+//16
+
+var numbers = [ 20,30,25,82,60].reduce(add, 0);
+function add(a,b)
+{
+	return a+b;
+};
+console.log(numbers);
+
+
+
+var num2 = [ 5, 60, 50, 58, 102].reduce(add, 2);
+function add(a,b){
+	return a + b;
+};
+console.log(num2);
+
+var sum = [ 20, 30, 50, 60, 5, 8, 9].reduceRight(function(a, b){ 
+	return a + b;
+	});
+document.write('<br/>', sum);  //182
+
+var sum = [ [1, 3], [3, 4], [6,8], [50, 60]].reduceRight(function( a, b){
+			return a+b
+	
+});
+document.write('<br/>', sum);
+
+var sum = [ 20, 15, 50, 1.2, 60, 5, 8.9, 9].reduce(function(a,b){
+	return a*b;
+})
+document.write('<br/>', sum)
+
+var min = [ 20, 15].reduce(function(a,b){
+	return a-b;
+})
+document.write('<br/>', min)
+
+x = sumAll(1, 123, 500, 115, 44, 88);
+
+function sumAll() {
+    var i;
+    var sum = 0;
+    for (i = 0; i < arguments.length; i++) {
+        sum += arguments[i];
+    }
+    return sum;
+}
+
+var arr1 = [ 30, 60, 80, 4];
+
+var sum = 0;
+function sumAll(item){
+	sum += Number(item)
+};
+arr1.forEach(sumAll);
+console.log(sum); //174
+
+
+//17
+
+var arr = [ 20, 30, 25, 82, 60, 1 ];
+
+function arrayMin(min) {
+  return min.reduce(function(a, b) {
+    return Math.min(a, b);
+  });
+}
+
+var rez = console.log(arrayMin(arr));
+
+var arr2 = [ 2, 30, 30, 82, 60, 15 ];
+
+
+function getMaxOfArray(numArray) {
+    return Math.min.apply(Math, numArray);
+}
+
+var rez2 = console.log(getMaxOfArray(arr2));
+
+//18
+
+function isFact(fact){
+	var result = 1;
+	for(i = 1; i < fact; i++){
+		result *= i;
+	}
+	return result;
+}
+isFact(8);
+
+function FirstFactorialRec(num) {
+
+ if(num == 1)
+ {
+ return 1;
+ }
+ return num * FirstFactorialRec(num-1);
+
+ }
+ FirstFactorialRec(8);
+
+	 
+
+//21
+var arr3 = [ '"Hello World and Coders"' ];
+
+function firstReverse(str){
+	var newString = '';
+	for(var i = str.length - 1; i >= 0; i--){
+		newString += str[i];
+		}
+		return newString;
+}
+  
+firstReverse('"Hello World and Coders"');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

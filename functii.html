@@ -1,0 +1,360 @@
+<script>
+	
+var world = 'World!';
+function sayHello(){
+ var hello = 'Helo';
+
+ 	function inner(){
+ 		var extra ='There is more!'
+ 		console.log(hello + world + extra);
+ 	}
+ inner();
+}
+
+sayHello(); // execut sayHello
+
+console.log('world outside sayHello(): ', world); /*accesarea variabilei din exteriorul functiei este global scope */
+
+//console.log('hello outside sayHello(): ', hello);
+//sayHello(); care este inafara functiei nu poate accesa variabina din interiorul functiei
+//ea functioneaza doar in interiorul functiei
+
+
+//shadowing
+
+var myColor = 'blue';
+console.log('myColor before myFunc()', myColor);
+
+function myFunc(){
+	var myColor='yellow';
+	var myNumber = 42;
+	console.log('myColor inside myFunc()', myColor);
+	console.log('myColor inside myFunc()', myFunc);
+
+}
+
+myFunc();
+console.log( 'myColor after myFunc()', myColor);
+//console.log( 'myNumber after myFunc()', myNumber);
+
+function doSmething (doit){
+	var color='blue';
+	var number;
+	if(doit){
+		color='red';
+		number = 10; // hoisting in partea de sus a functiei
+		console.log('Color in if(){}', color)
+	}
+	console.log('Colo after if(){}', color)
+}
+
+doSmething(false);
+doSmething(true);
+
+
+function doSmething (doit){
+	var color='blue', number, name = 'Jim'
+	if(doit){
+		color='red';
+		number = 10; // hoisting in partea de sus a functiei
+		console.log('Color in if(){}', color)
+	}
+	console.log('Colo after if(){}', color)
+}
+
+var firstt = 'Hello'
+var second = 'heello'
+if (firstt == second){
+	console.log("this strings are equal");
+} else {
+	console.log("This strings are different");
+}
+
+var first = 'Hello'
+var second = 'hello'
+if (first.toLowerCase() === second.toLowerCase()){
+	console.log("this strings are equal");
+} else {
+	console.log("This strings are different");
+}
+
+function compare(a,b){
+	console.log(a + "<=" + b, a<=b );
+}
+compare('a', 'b');
+compare( 'a', "A");
+compare( 'apples', 'oranges');
+compare('apples', "application");
+compare('hello', 'hello')
+
+
+//whole numbers
+var a = 11,
+    b = -123;
+
+var c = 1.5,
+    d = 123.222;
+
+var e = 0.1,
+    f=0.2;
+
+   var result = e*f;
+   var g = 1.23E16; //12300000000000000
+
+   var h = 012; //10
+   // ff 00 00  red green blue
+
+   var i = 0x10;//16
+
+   var j = parseInt('197');
+   var x = parseInt('012', 10); //12
+   var k = parseInt('0101111', 2); //47
+   var z = parseInt('50 de oameni', 10); // z=50
+   var l = parseInt( 'there are 23 people', 10); NaN 
+   // l === Nan  false, l == l , fasle ( )
+   // NaN are proprietatea e a nu fi egal cu el insusi rezulta false
+   console.log(isNaN(l)); //true
+
+   var m = parseFloat("123.456 is a strange number"); // m=123.456
+   var n = parseFloat("this is number123.456 is a strange number"); // NaN
+
+
+var v = Math.round(2.5);
+var w = Math.floor(2.5);
+var x = Math.ceil(6.5);
+var y = Math.pow(2, 5);
+var z = Math.min(3, 5, 1);
+
+
+var x= [ 'some', 'extra',  'words', 'here'];
+console.log(x.length);
+
+var y=[ 'a string', 3,[ 'a sub array', 2, 3, 4], true, 'treehouse', function(a,b){ return a+b;}]
+var z= []; //literal array
+var a = new Array();
+var a = new Array(50); // array constructor
+
+var my_array = [ 'Hello', 42, true, function(a) {return a*2}];
+var word = my_array[0];
+
+var my_array = [ 10, 44, 32, 100, 0, 44, 3, 4]
+console.log(my_array.toString());
+
+my_array.sort(function(a, b) {
+	return a-b;
+});
+console.log(my_array.toString());
+
+var my_array = [ 1,2,3,4,5];
+my_array.reverse();
+console.log(my_array);
+console.log(my_array.toString())
+
+var x = [ 1,2,3];
+var y = [4,5,6];
+var z = x.concat(y);
+console.log(z);
+
+var my_array=[0,1,2,3,4,5];
+console.log(my_array.slice(2,7))
+
+var words = [ 'these', 'are', 'some', 'words', true];
+console.log(words.join(' WORLD'));
+
+var my_array = [ 0, 1, 2, 3, 4, 5, 6];
+console.log(my_array);
+//delete my_array[2];
+my_array.splice(2, 2, 'two', 'else', 'else', 'else');
+my_array.splice(2, 0, "two");
+my_array [2]= "two";
+console.log(my_array);
+
+
+function sayHello (name, greeting) {
+	if(typeof name === 'undefined'){ 
+		return 0;
+	}
+	if (typeof greeting === 'undefined') {
+		greeting = 'Hello';
+	}
+	console.log(greeting  + 'world!'+ name);
+	return name.length;
+}
+ console.log(sayHello('Jim', 'Greetings'));
+console.log(sayHello('Ioana'));
+ console.log(sayHello());
+
+ var color = 'black';
+ var number = 1
+ function showColor(){
+ 	var color = 'green';
+ 	var shape = 'square';
+ 	var number = 2;
+
+ 	console.log('showColor color', color);// greem
+ 		console.log('showColor number', number); 
+ 		 console.log("gshowColor shape", shape);
+ }
+ showColor();
+ console.log('Global color', color); // black
+  console.log('Global number', number);
+  
+ 
+// anonymous function
+ var myfunction = function() {
+	console.log('myFunction was called');
+	undeclaredVariable;
+};
+
+
+var callTwice = function (targetFunction) {
+	targetFunction();
+	targetFunction();
+
+}
+
+callTwice(function() {
+ console.log('Hello from anon function');
+
+});
+
+(function(){
+	var a,b,c;
+	//...
+	console.log('from anon function')
+
+}) ( 1, 'hello');
+
+
+var jim = { 
+	name: "Jim", 
+	skils: [ "JavaScript", "Ruby", "Dancing"],
+	'favorite color': "green",
+	greet: function(person) {
+		console.log("hello, I am a " + this.name);
+	}
+};
+
+
+var nik = { 
+	name: "Nik", 
+	greet: jim.greet
+	};
+
+
+jim["favorite color"] = 'blue'; 
+
+console.log(jim.name, jim.skils);
+console.log(jim["favorite color"]);
+jim.greet(); 
+
+jim.greet(); 
+nik.greet(); 
+
+jim.greet.apply(nik);
+jim.greet.call(nik);
+
+var numeIoana = jim.greet;
+numeIoana.call({name: 'Ioana'});
+
+var numeGigi = jim.greet;
+numeGigi.apply({name: 'Gigi'});
+
+x = findMax(1, 123, 500, 700, 115, -20, 44, 88);
+
+function findMax() {
+    var i;
+    var max = +Infinity;
+    for (i = 0; i < arguments.length; i++) {
+        if (arguments[i] < max) {
+            max = arguments[i];
+        }
+    }
+    return max;
+}
+console.log(x);
+
+
+x = sumAll(1, 123, 500, 115, 44, 88);
+
+function sumAll() {
+    var i;
+    var sum = 0;
+    for (i = 0; i < arguments.length; i++) {
+        sum += arguments[i];
+    }
+    return sum;
+}
+
+var numere2 = [1,2,3,4,5, 20, -21, -2, 3, 40];
+
+function adunare1(pare){
+	var suma = 0;
+		for (var i = 0; i < pare.length; i++) {
+		if (pare[i] % 2 == 0) {
+		suma += pare[i]
+		};
+		
+	};
+	return suma;
+}; 
+ var rezultat2 = adunare1(numere2);
+ console.log(rezultat2);
+
+function isEven(num){
+	if(num % 2 === 0){
+		return true;
+	} else {
+		return false;
+	}
+	return num;
+}
+
+
+function isEven(num){
+	num % 2 === 0;
+};
+
+
+var number = isEven(5);
+document.write(number);
+
+function isFact(fact){
+	var rezult = 1;
+	for(i = 1; i < fact; i++){
+		result *= i;
+	}
+	return result;
+}
+ 
+
+var num = 8;
+function doMath(){
+	num += 1;
+	if(num % 5 == 0) {
+		return true
+	} else{
+		return false
+	}
+}
+num += 1;
+doMath();
+
+function printReverse(arr){
+	for(i = arr.length - 1; i >= 0; i--){
+		console.log(arr[i]);
+	}
+}
+printReverse([3, 6, 2, 5]);
+
+function isUniform(arr){
+	var first = [0];
+	for(var i = 1; i<arr.length; i++){
+		if(arr[i] !== first){
+			return false;
+		}
+	}
+	return = true
+}
+
+</script>
