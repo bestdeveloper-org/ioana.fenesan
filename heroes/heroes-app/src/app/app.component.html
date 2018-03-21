@@ -1,0 +1,19 @@
+<h1>{{hero}}</h1>
+
+<app-heroes></app-heroes>
+<app-nexthero></app-nexthero>
+<app-categoy-item></app-categoy-item>
+<app-category-list></app-category-list>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <button class="btn btn-primary" (click)="onlyOdd = !onlyOdd">Only show odd numbers</button>
+      <br><br>
+      <ul class="List">
+        <li class="list-group"
+        *ngFor="let number of numbers"> {{number }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
